@@ -71,7 +71,7 @@ function App() {
           <ExpenseForm onSubmit={handleAddExpense} />
           
           {/* FIXED: Pass expenses directly, not as initialExpenses */}
-          <ExpenseList expenses={expenses} />
+           <ExpenseList expenses={expenses} />
         </main>
       </div>
     </div>
