@@ -6,6 +6,10 @@ import './ExpenseList.css';
 // Type for expense data (reusing interface from ExpenseCard)
 type Expense = ExpenseCardProps;
 
+type SortOption = 'date' | 'amount' | 'category';
+type FilterOption = 'All' | ExpenseCategory;
+type ExpenseCategory = 'Food' | 'Transportation' | 'Entertainment' | 'Other';
+
 /**
  * Props interface for ExpenseList component
  * FIXED: expenses is now required (not optional initialExpenses)
@@ -34,7 +38,7 @@ interface ExpenseListProps {
 const ExpenseList: React.FC<ExpenseListProps> = ({ expenses }) => {
   
 // To this:                     //supposed to be <FilterOption>, not <string> but doesn't work:()
-const [filterCategory, setFilterCategory] = useState<string>('All');
+const [filterCategory, setFilterCategory] = useState<FilterOption>('All');
 
   // Filter expenses from props (not local state)
   const filteredExpenses = filterCategory === 'All' 
@@ -52,7 +56,7 @@ const [filterCategory, setFilterCategory] = useState<string>('All');
    * @param {React.ChangeEvent<HTMLSelectElement>} event - Select change event
    */
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilterCategory(event.target.value);
+    setFilterCategory(event.target.value as FilterOption);
   };
 
   return (
