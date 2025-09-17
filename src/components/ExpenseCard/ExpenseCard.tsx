@@ -1,20 +1,44 @@
 // src/components/ExpenseCard/ExpenseCard.tsx
+
+//SEC 1, STEP 2 Comment Block:
+/*
+TYPESCRIPT FEATURE INVENTORY:
+Interfaces Found:
+1. ExpenseCardProps - defines component contract
+2. Props.id - id # for props
+
+Type Annotations Found:
+1. amount: number - ensures currency values are numeric
+2. id: number - unique identifier # for each expense
+
+Autocomplete Helped:
+1. Finishing my line of code for something that I could have done (autocompleting "number" for me)
+
+Error I Fixed:
+1. Syntax can be fixed easily, as well as clear indications for functionality in React
+*/
+
 import React from 'react';
 import './ExpenseCard.css';
 
+//Union Types: 
+//SortOption -> Used for any sorting functionality
 type SortOption = 'date' | 'amount' | 'category';
 type FilterOption = 'All' | ExpenseCategory;
 type ExpenseCategory = 'Food' | 'Transportation' | 'Entertainment' | 'Other';
+
 // TypeScript interface defines the structure of props this component expects
 // This acts like a contract - any parent component must provide these exact properties
 export interface ExpenseCardProps {
-  id: number;              // Unique identifier for each expense
-  description: string;     // What the expense was for (e.g., "Lunch at Joe's Pizza")
+  //Required Props
+  id: number;              // Unique id number for each expense
+  description: FilterOption;     // What the expense was for (e.g., "Lunch at Joe's Pizza")
   amount: number;         // Cost in dollars (will be formatted to show currency)
   category: ExpenseCategory;       //Only allows valid categories
-  date: string;          // When the expense occurred (formatted as string)
+  date: FilterOption;          // When the expense occurred- date (formatted as string)
 
   // Optional props (can be provided or not)
+  //Adds functionality w/o breaking anything -> more flexible
   onDelete?: (id: number) => void;    // The ? makes it optional
   highlighted?: boolean;              // Component might be highlighted
   showCategory?: boolean;             // Category display might be hidden
@@ -29,7 +53,7 @@ export interface ExpenseCardProps {
  * @param {string} props.category - Expense category for organization and filtering
  * @param {string} props.date - Date when expense occurred (ISO string format)
  */
-const ExpenseCard: React.FC<ExpenseCardProps> = ({ 
+const ExpenseCard: React.FC<ExpenseCardProps> = ({  //What does React.FC mean? -> Functional Component: Generic type to define a functional React component to specify the types of the component's props
   id, 
   description, 
   amount, 
@@ -40,7 +64,9 @@ const ExpenseCard: React.FC<ExpenseCardProps> = ({
   showCategory = true,      // Default to true if not provided
   onDelete                  // Might be undefined
 }) => {
+
   // Format currency for professional display
+  // TypeScript automatically kn ows these are the right types
   const formattedAmount = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD'

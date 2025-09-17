@@ -39,6 +39,7 @@ const ExpenseList: React.FC<ExpenseListProps> = ({ expenses }) => {
   
 // To this:                     //supposed to be <FilterOption>, not <string> but doesn't work:()
 const [filterCategory, setFilterCategory] = useState<FilterOption>('All');
+//Update (9/17): Does <FilterOption> work now??? I cannot tell on my ipad right now but I don't see an error so
 
   // Filter expenses from props (not local state)
   const filteredExpenses = filterCategory === 'All' 
