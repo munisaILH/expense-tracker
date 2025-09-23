@@ -35,7 +35,7 @@ export interface ExpenseCardProps {
   description: FilterOption;     // What the expense was for (e.g., "Lunch at Joe's Pizza")
   amount: number;         // Cost in dollars (will be formatted to show currency)
   category: ExpenseCategory;       //Only allows valid categories
-  date: FilterOption;          // When the expense occurred- date (formatted as string)
+  date: string;          // When the expense occurred- date (formatted as string)
 
   // Optional props (can be provided or not)
   //Adds functionality w/o breaking anything -> more flexible

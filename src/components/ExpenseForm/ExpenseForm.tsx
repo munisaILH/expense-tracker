@@ -1,6 +1,6 @@
 // src/components/ExpenseForm/ExpenseForm.tsx
 import React, { useState } from 'react';
-import './ExpenseForm.css';
+//import './ExpenseForm.css';
 
 // Form data interface
 interface ExpenseFormData {

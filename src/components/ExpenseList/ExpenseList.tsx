@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ExpenseCard from '../ExpenseCard/ExpenseCard';
 import type { ExpenseCardProps } from '../ExpenseCard/ExpenseCard';
-import './ExpenseList.css';
+//import './ExpenseList.css';
 // Type for expense data (reusing interface from ExpenseCard)
 type Expense = ExpenseCardProps;
 
