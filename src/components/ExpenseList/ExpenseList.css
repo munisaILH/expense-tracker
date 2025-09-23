@@ -1,86 +1,90 @@
-/* src/components/ExpenseList/ExpenseList.css */
+/* Container Styles */
 .expense-list {
-  background: white;
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 32px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #E5E7EB;
+  background: white;           /* → bg-white */
+  border-radius: 8px;         /* → rounded-lg */
+  padding: 24px;              /* → p-6 */
+  margin-bottom: 32px;        /* → mb-8 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* → shadow-sm */
+  border: 1px solid #E5E7EB;  /* → border border-gray-200 */
 }
 
+/* Main List Title */
 .expense-list h2 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #1F2937;
-  margin: 0 0 24px 0;
+  font-size: 24px;            /* → text-2xl */
+  font-weight: bold;          /* → font-bold */
+  color: #1F2937;             /* → text-gray-900 */
+  margin: 0 0 24px 0;         /* → mb-6 */
 }
 
+/* Summary/Filter Bar */
 .expense-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-  padding: 16px;
-  background: #F9FAFB;
-  border-radius: 8px;
-  border: 1px solid #E5E7EB;
+  display: flex;              /* → flex */
+  justify-content: space-between; /* → justify-between */
+  align-items: center;        /* → items-center */
+  margin-bottom: 24px;        /* → mb-6 */
+  padding: 16px;              /* → p-4 */
+  background: #F9FAFB;        /* → bg-gray-50 */
+  border-radius: 8px;         /* → rounded-lg */
+  border: 1px solid #E5E7EB;  /* → border border-gray-200 */
 }
 
+/* Summary Title */
 .expense-summary h2 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #4F46E5;
-  margin: 0;
+  font-size: 20px;            /* → text-xl */
+  font-weight: bold;          /* → font-bold */
+  color: #4F46E5;             /* → text-blue-500 */
+  margin: 0;                  /* → m-0 */
 }
 
+/* Filter Select Dropdown */
 .expense-summary select {
-  padding: 8px 12px;
-  border: 1px solid #D1D5DB;
-  border-radius: 6px;
-  font-size: 14px;
-  background: white;
-  color: #374151;
-  cursor: pointer;
-  transition: border-color 0.2s;
+  padding: 8px 12px;          /* → px-3 py-2 */
+  border: 1px solid #D1D5DB;  /* → border border-gray-300 */
+  border-radius: 6px;         /* → rounded-md */
+  font-size: 14px;            /* → text-sm */
+  background: white;          /* → bg-white */
+  color: #374151;             /* → text-gray-700 */
+  cursor: pointer;            /* → cursor-pointer */
+  transition: border-color 0.2s; /* → transition-colors duration-200 */
 }
 
 .expense-summary select:hover {
-  border-color: #4F46E5;
+  border-color: #4F46E5;      /* → hover:border-blue-500 */
 }
 
 .expense-summary select:focus {
-  outline: none;
-  border-color: #4F46E5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  outline: none;              /* → focus:outline-none */
+  border-color: #4F46E5;      /* → focus:ring-2 focus:ring-blue-500 */
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); /* → focus:border-transparent */
 }
 
-/* Empty state when no expenses */
+/* Empty State Styling */
 .expense-list-empty {
-  text-align: center;
-  padding: 40px 20px;
-  color: #6B7280;
+  text-align: center;         /* → text-center */
+  padding: 40px 20px;         /* → py-10 px-5 */
+  color: #6B7280;             /* → text-gray-500 */
 }
 
 .expense-list-empty p {
-  font-size: 16px;
-  margin: 0;
+  font-size: 16px;            /* → text-base */
+  margin: 0;                  /* → m-0 */
 }
 
-/* Mobile responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .expense-list {
-    padding: 16px;
-    margin-bottom: 20px;
+    padding: 16px;            /* → p-4 md:p-6 */
+    margin-bottom: 20px;      /* → mb-5 md:mb-8 */
   }
   
   .expense-summary {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
+    flex-direction: column;   /* → flex-col md:flex-row */
+    gap: 16px;                /* → gap-4 */
+    text-align: center;       /* → text-center md:text-left */
   }
   
   .expense-summary select {
-    width: 100%;
-    max-width: 200px;
+    width: 100%;              /* → w-full */
+    max-width: 200px;         /* → max-w-48 */
   }
 }

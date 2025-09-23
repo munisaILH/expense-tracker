@@ -4,7 +4,8 @@ import Header from './components/Header/Header';
 import ExpenseSummary from './components/ExpenseSummary/ExpenseSummary';
 import ExpenseList from './components/ExpenseList/ExpenseList';
 import ExpenseForm from './components/ExpenseForm/ExpenseForm';
-import './App.css';
+import type  FilterOption from './components/ExpenseCard/ExpenseCard';
+//import './App.css';
 
 // Type for expense data
 interface Expense {
@@ -70,8 +71,8 @@ function App() {
           
           <ExpenseForm onSubmit={handleAddExpense} />
           
-          {/* FIXED: Pass expenses directly, not as initialExpenses */}
-           <ExpenseList expenses={expenses} />
+          {/*ERROR: Union Type, still not working- not sure how to fix this issue yet*/}
+           <ExpenseList expenses ={expenses} />
         </main>
       </div>
     </div>
