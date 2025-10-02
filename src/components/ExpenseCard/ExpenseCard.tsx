@@ -80,7 +80,7 @@ const ExpenseCard: React.FC<ExpenseCardProps> = ({  //What does React.FC mean? -
   });
 
   return (
-    <article className="expense-card">
+    <article className="bg-white rounded-lg p-4 mb-3 shadow-md transition-all duration-200 border-l-4 border-blue-500">
       <div className="expense-header">
         <span className="expense-category">{category}</span>
         <time className="expense-date" dateTime={date}>

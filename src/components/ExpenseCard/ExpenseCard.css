@@ -1,13 +1,5 @@
 /* src/components/ExpenseCard/ExpenseCard.css  */
-.expense-card {
-  background: white;         /* → bg-white */
-  border-radius: 8px;       /* → rounded-lg */
-  padding: 16px;            /* → p-4 */
-  margin-bottom: 12px;      /* → mb-3 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* → shadow-md */
-  transition: transform 0.2s, box-shadow 0.2s; /* → transition-all duration-200 */
-  border-left: 4px solid #4F46E5; /* → border-l-4 border-blue-500 */
-}
+
 
 .expense-card:hover {
   transform: translateY(-2px); /* → hover:-translate-y-0.5 */
