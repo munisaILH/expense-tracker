@@ -1,6 +1,6 @@
 // src/components/ExpenseForm/ExpenseForm.tsx
 import React, { useState } from 'react';
-import './ExpenseForm.css';
+
 
 // Form data interface
 interface ExpenseFormData {
@@ -84,10 +84,10 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form className="expense-form" onSubmit={handleSubmit}>
+    <form className="bg-white rounded-lg p-6 mb-8 shadow-sm border border-gray-200" onSubmit={handleSubmit}>
       <h3>Add New Expense</h3>
       
-      <div className="form-group">
+      <div className="mb-4">
         <label htmlFor="description">Description *</label>
         <input
           type="text"
@@ -101,7 +101,7 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onSubmit }) => {
       </div>
 
       <div className="form-row">
-        <div className="form-group">
+        <div className="mb-4">
           <label htmlFor="amount">Amount *</label>
           <input
             type="number"
@@ -116,7 +116,7 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onSubmit }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="mb-4">
           <label htmlFor="category">Category</label>
           <select
             id="category"
@@ -133,7 +133,7 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onSubmit }) => {
         </div>
       </div>
 
-      <div className="form-group">
+      <div className="mb-4">
         <label htmlFor="date">Date</label>
         <input
           type="date"
