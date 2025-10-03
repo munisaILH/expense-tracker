@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ExpenseCard from '../ExpenseCard/ExpenseCard';
 import type { ExpenseCardProps } from '../ExpenseCard/ExpenseCard';
-import './ExpenseList.css';
+//import './ExpenseList.css';
 // Type for expense data (reusing interface from ExpenseCard)
 type Expense = ExpenseCardProps;
 
@@ -61,7 +61,7 @@ const [filterCategory, setFilterCategory] = useState<FilterOption>('All');
   };
 
   return (
-    <div className="expense-list">
+    <div className="bg-white rounded-lg p-6 mb-8 shadow-sm border border-gray-200">
       <div className="expense-controls">
         <h2>Your Expenses</h2>
         
@@ -82,7 +82,7 @@ const [filterCategory, setFilterCategory] = useState<FilterOption>('All');
         </div>
       </div>
 
-      <div className="expense-summary">
+      <div className="flex justify-between items-center mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
         <p>
           Total: ${filteredTotal.toFixed(2)} ({filteredExpenses.length} expenses)
         </p>
