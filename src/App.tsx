@@ -55,8 +55,8 @@ function App() {
   const totalAmount = expenses.reduce((sum, expense) => sum + expense.amount, 0);
 
   return (
-    <div className="App">
-      <div className="app-container">
+    <div className="min-h-screen bg-slate-50">
+      <div className="max-w-6xl mx-auto p-5">
         <Header 
           title="Expense Tracker" 
           subtitle="Manage your spending with confidence" 
