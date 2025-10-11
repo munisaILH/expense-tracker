@@ -1,12 +1,13 @@
 // src/components/ExpenseForm/ExpenseForm.tsx
 import React, { useState } from 'react';
+import type { ExpenseCategory } from '../ExpenseCard/ExpenseCard';
 
 
 // Form data interface
 interface ExpenseFormData {
   description: string;
   amount: string;
-  category: string;
+  category: ExpenseCategory;
   date: string;
 }
 
@@ -19,7 +20,7 @@ interface ExpenseFormProps {
   onSubmit: (expenseData: {
     description: string;
     amount: number;
-    category: string;
+    category: ExpenseCategory;
     date: string;
   }) => void;
 }

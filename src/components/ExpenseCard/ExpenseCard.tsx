@@ -19,20 +19,19 @@ Error I Fixed:
 */
 
 import React from 'react';
-import './ExpenseCard.css';
 
 //Union Types: 
 //SortOption -> Used for any sorting functionality
 type SortOption = 'date' | 'amount' | 'category';
 type FilterOption = 'All' | ExpenseCategory;
-type ExpenseCategory = 'Food' | 'Transportation' | 'Entertainment' | 'Other';
+export type ExpenseCategory = 'Food' | 'Transportation' | 'Entertainment' | 'Other';
 
 // TypeScript interface defines the structure of props this component expects
 // This acts like a contract - any parent component must provide these exact properties
 export interface ExpenseCardProps {
   //Required Props
   id: number;              // Unique id number for each expense
-  description: FilterOption;     // What the expense was for (e.g., "Lunch at Joe's Pizza")
+  description: string;     // What the expense was for (e.g., "Lunch at Joe's Pizza")
   amount: number;         // Cost in dollars (will be formatted to show currency)
   category: ExpenseCategory;       //Only allows valid categories
   date: string;          // When the expense occurred- date (formatted as string)

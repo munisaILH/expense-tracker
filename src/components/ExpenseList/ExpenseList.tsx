@@ -18,7 +18,9 @@ type ExpenseCategory = 'Food' | 'Transportation' | 'Entertainment' | 'Other';
  */
 interface ExpenseListProps {
   expenses: Expense[];  // FIXED: Required prop, receives current state from App
+  onDeleteExpense?: (id: number) => void; // Optional delete handler
 }
+
 
 /**
  * ExpenseList Component - FIXED VERSION
@@ -35,7 +37,7 @@ interface ExpenseListProps {
  * @param {ExpenseListProps} props - Component props
  * @returns {JSX.Element} Rendered expense list with filtering controls
  */
-const ExpenseList: React.FC<ExpenseListProps> = ({ expenses }) => {
+const ExpenseList: React.FC<ExpenseListProps> = ({ expenses, onDeleteExpense }) => {
   
 // To this:                     //supposed to be <FilterOption>, not <string> but doesn't work:()
 const [filterCategory, setFilterCategory] = useState<FilterOption>('All');
@@ -98,6 +100,7 @@ const [filterCategory, setFilterCategory] = useState<FilterOption>('All');
             <ExpenseCard
               key={expense.id}
               {...expense}
+              onDelete={onDeleteExpense}  // Pass down delete
             />
           ))
         )}
